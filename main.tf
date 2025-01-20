@@ -1,11 +1,11 @@
 locals {
-    subnet = var.start_on_subnet ? var.subnet ? var.subnet : "projects/${var.project_id}/regions/${var.region}/subnetworks/subnet-for-vpn" : null
+  subnet = var.start_on_subnet ? var.subnet ? var.subnet : "projects/${var.project_id}/regions/${var.region}/subnetworks/subnet-for-vpn" : null
 }
 
 # API
 # ----------------------------------------------
 resource "google_project_service" "workbench_api_services" {
-    for_each = toset([
+  for_each = toset([
     "notebooks.googleapis.com",
     # "composer.googleapis.com", # message d'erreur au lancement mais semble fonctionner quand meme sans activation.
     # "dataproc.googleapis.com"
@@ -38,9 +38,9 @@ resource "google_project_iam_member" "workbench_sa_roles" {
 # workbench instance
 # ----------------------------------------------
 resource "google_workbench_instance" "workbench_instance" {
-  name     = "workbench-instance-on-vpc"
-  location = "${var.region}-b"
-  project  = var.project_id
+  name          = "workbench-instance-on-vpc"
+  location      = "${var.region}-b"
+  project       = var.project_id
   desired_state = "STOPPED"
 
   gce_setup {
