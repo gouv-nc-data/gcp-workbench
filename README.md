@@ -33,7 +33,7 @@ No modules.
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | id du projet | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"europe-west1"` | no |
 | <a name="input_start_on_subnet"></a> [start\_on\_subnet](#input\_start\_on\_subnet) | n/a | `bool` | `true` | no |
-| <a name="input_subnet"></a> [subnet](#input\_subnet) | n/a | `string` | `null` | no |
+| <a name="input_subnet"></a> [subnet](#input\_subnet) | n/a | `string` | `""` | no |
 
 ## Outputs
 
