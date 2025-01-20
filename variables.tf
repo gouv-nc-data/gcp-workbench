@@ -15,7 +15,7 @@ variable "start_on_subnet" {
 
 variable "subnet" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "machine_type" {

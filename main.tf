@@ -1,5 +1,5 @@
 locals {
-  subnet = var.start_on_subnet ? var.subnet ? var.subnet : "projects/${var.project_id}/regions/${var.region}/subnetworks/subnet-for-vpn" : null
+  subnet = var.start_on_subnet ? (var.subnet != "" ? var.subnet : "projects/${var.project_id}/regions/${var.region}/subnetworks/subnet-for-vpn") : null
 }
 
 # API
